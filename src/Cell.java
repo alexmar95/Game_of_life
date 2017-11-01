@@ -4,7 +4,7 @@ public abstract class Cell implements Runnable {
 
 	private final static int T_full = 1000;
 	private final static int T_starve = 3000;
-	protected World world;
+	private World world;
 	private long lastMeal;
 	private int size = 0;
 	
@@ -39,14 +39,17 @@ public abstract class Cell implements Runnable {
 		if(!isAlive()) {
 			return;
 		}
-		size = 0;
 	}
 	
 	public void setHungry() {
 		lastMeal = System.currentTimeMillis() - T_full;
 	}
-	public void giveBirth(Cell c) {
-		world.addCell(c);
+	public void giveBirth(SexyCell c) {
+		world.addCell(new SexyCell(world));
+	}
+	public void giveBirth(UnsexyCell c) {
+		world.addCell(new UnsexyCell(world));
+		//System.out.println(this+ " gata");
 	}
 	private void die() {
 		System.out.println(this+ " goodbye cruel world!");
@@ -63,7 +66,10 @@ public abstract class Cell implements Runnable {
 	public boolean horny() {
 		return size>=10 && !hungry();
 	}
-			
+	
+	public SexyCell mate(SexyCell c){
+		return world.mate(c);
+	}
 	
 	@Override
 	public void run() {
