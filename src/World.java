@@ -18,7 +18,7 @@ public class World {
 				sexMate = sexy;
 				return null;
 			}else {
-				sexMate.readyToFuck();
+				sexMate.readyToBang();
 				if(sexMate.hungry()) {
 					sexMate = sexy;
 					return null;

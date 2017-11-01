@@ -55,7 +55,7 @@ public abstract class Cell implements Runnable {
 		System.out.println(this+ " goodbye cruel world!");
 		world.removeCell(this);
 	}
-	public void fuck() {
+	public void makeLove() {
 		size=0;
 	}
 	//TODO

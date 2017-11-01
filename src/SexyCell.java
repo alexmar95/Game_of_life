@@ -1,29 +1,29 @@
 
 public class SexyCell extends Cell {
 
-	private boolean canFuck=true;
+	private boolean canMakeLove=true;
 	
 	public SexyCell(World w) {
 		super(w);
 	}
-	public void readyToFuck() {
-		canFuck=true;
+	public void readyToBang() {
+		canMakeLove=true;
 	}
-	public void fuck(){
-		canFuck=true;
-		super.fuck();
+	public void makeLove(){
+		canMakeLove=true;
+		super.makeLove();
 	}
 	public void reproduce() {
 		super.reproduce();
-		if(canFuck==false)
+		if(canMakeLove==false)
 			return;
-		SexyCell toFuck = mate(this);
-		if(toFuck == null) {
-			canFuck = false;
+		SexyCell toLove = mate(this);
+		if(toLove == null) {
+			canMakeLove = false;
 		}else {
-			toFuck.fuck();
-			this.fuck();
-			System.out.println(this+ " justFucked " +toFuck);
+			toLove.makeLove();
+			this.makeLove();
+			System.out.println(this+ " justMadeLove " +toLove);
 			giveBirth(this);
 		}
 	}

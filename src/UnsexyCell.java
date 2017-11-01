@@ -9,7 +9,7 @@ public class UnsexyCell extends Cell {
 		super.reproduce();
 		setHungry();
 		System.out.println(this+ " unsexySexyTime");
-		fuck();
+		makeLove();
 		giveBirth(this);
 	}
 	
