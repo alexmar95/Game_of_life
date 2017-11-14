@@ -19,7 +19,6 @@ public abstract class Cell implements Runnable {
 	}
 	
 	private void eat() {
-		synchronized(world.foodSema()){
 			if(!isAlive()) {
 				return;
 			}
@@ -28,7 +27,6 @@ public abstract class Cell implements Runnable {
 				size++;
 				System.out.println(this+ " yumyum size=" +size);
 			}	
-		}
 	}
 	
 	public void resetSize() {

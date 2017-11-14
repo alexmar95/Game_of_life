@@ -20,7 +20,7 @@ In simulare, celulele vor fi reprezentate de fire de executie distincte.
 public class Main {
 
 	public static void main(String[] args) {
-		World w = new World(150);
+		World w = new World(150,5);
 		w.startWorld(2,2);
 		System.out.println("Merge");
 	}
